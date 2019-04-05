@@ -100,8 +100,7 @@ namespace TestGUI
                     MessageBox.Show(Convert.ToString(a) + " < " + Convert.ToString(mLength));
                 }
                 
-            }
-      //label2
+            }    //label2
           
         }
 
