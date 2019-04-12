@@ -18,16 +18,10 @@ namespace TestGUI
         public void setLengthApophema()
         {
             h = rnd.Next(1, 15);
-            MessageBox.Show("Length of apophema: " + h);
-        }
-        public void setPiramida(int lengthPiramida)
-        {
-            this.lengthPiramida = lengthPiramida;
         }
         public void setLengthPiramida()
         {
             lengthPiramida = rnd.Next(1, 15);
-            MessageBox.Show("Length of Piramida: " + lengthPiramida);
         }
         public void setPiramidaH()
         {
@@ -52,10 +46,14 @@ namespace TestGUI
             VPiramida = 0.33 * squarePiramida * h;
             return VPiramida;
         }
-        public void PiramidaSecret()
+        public string PiramidaSecret()
         {
-            MessageBox.Show("Square piramida = " + squarePiramida);
-            MessageBox.Show("V piramida = " + VPiramida);
+            setLengthApophema();
+            setLengthPiramida();
+            setPiramidaH();
+
+            String resultPiramida = "Square piramida = " + getSquarePiramida() + ". V piramida = " + getVpiramida();
+            return resultPiramida;
         }
     }
 }

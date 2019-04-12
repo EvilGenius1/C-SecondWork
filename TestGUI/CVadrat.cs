@@ -21,7 +21,6 @@ namespace TestGUI
         public void setLengthCvadrate()
         {
             lengthCvadrat = rnd.Next(1, 15);
-            Console.WriteLine(" length of cvadrate: " + lengthCvadrat);
         }
 
         public int getInformationAboutSquare()
@@ -42,13 +41,13 @@ namespace TestGUI
             return perimeter;
         }
 
-        public void displayMessage()
+        public string displayMessageSquare()
         {
-            MessageBox.Show("\nCvadrat Square = " + getInformationAboutSquare());
-            MessageBox.Show("\nCvadrat Diagonal = " + getInformationAboutDiagonal());
-            MessageBox.Show("\nCvadrat Perimeter = " + getInformationPerimeter());
+            setLengthCvadrate();
+            String squareCvadratov = "\nCvadrat Square = " + getInformationAboutSquare() + ". Cvadrat Square = " + getInformationAboutDiagonal() + ". Cvadrat Perimeter = " + getInformationPerimeter();
+            return squareCvadratov;
+   
         }
     }
-
 }
 
