@@ -3,10 +3,14 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+
+//C:\Users\Иванов\Desktop\Программирование
+
 
 namespace TestGUI
 {
@@ -16,10 +20,13 @@ namespace TestGUI
         CVadrat t = new CVadrat();
         Piramida p = new Piramida();
         Random rnd = new Random();
-     
-        public Form1()
+        
+        string path = @"C:\Users\Иванов\Desktop\Программирование\anotherResults.dat";
+      
+    public Form1()
         {
             InitializeComponent();
+            //Char.IsNumber(str[index])&& str[index-1]=='-']
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -51,9 +58,11 @@ namespace TestGUI
                 Nlength = rnd.Next(2, 5);
                 arrayN[i] = Convert.ToInt32(Math.Pow(Nlength, 2));
                 label4.Text = ("Square N cvadratov : " + arrayN[i] + ". ");
+                File.WriteAllText(path, Convert.ToString(label4));
             }
             NsquareMin = arrayN.Min();
             label5.Text = ("Min = " + NsquareMin + ". ");
+            File.WriteAllText(path, Convert.ToString(label5));
         }
 
        
@@ -73,17 +82,26 @@ namespace TestGUI
         private void button4_Click(object sender, EventArgs e)
         {
             int a, mLength;
-            a = (mpart(Convert.ToInt32(inpurtA.Text)));
+            try {
+                 a = (mpart(Convert.ToInt32(inpurtA.Text)));
+             }
+             catch(System.FormatException)
+             {
+              a = 0;
+             }
+
             for (int i = 0; i < rnd.Next(3, 6); i++)
             {
                 mLength = rnd.Next(5, 25);
                 if (a > mLength)
                 {
-                    label6.Text = (Convert.ToString(a) + " > " + Convert.ToString(mLength) );
+                    label6.Text = (Convert.ToString(a) + " > " + Convert.ToString(mLength));
+                    File.WriteAllText(path, Convert.ToString(label6));
                 }
                 else
                 {
                     label7.Text = (Convert.ToString(a) + " < " + Convert.ToString(mLength));
+                    File.WriteAllText(path, Convert.ToString(label7));
                 }             
             }         
         }
@@ -119,6 +137,16 @@ namespace TestGUI
         }
 
         private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Label6_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Label7_Click(object sender, EventArgs e)
         {
 
         }

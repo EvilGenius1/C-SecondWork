@@ -152,11 +152,12 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(400, 331);
+            this.label7.Location = new System.Drawing.Point(427, 330);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(46, 17);
             this.label7.TabIndex = 15;
             this.label7.Text = "label7";
+            this.label7.Click += new System.EventHandler(this.Label7_Click);
             // 
             // label6
             // 
@@ -166,6 +167,7 @@
             this.label6.Size = new System.Drawing.Size(46, 17);
             this.label6.TabIndex = 16;
             this.label6.Text = "label6";
+            this.label6.Click += new System.EventHandler(this.Label6_Click_1);
             // 
             // Form1
             // 

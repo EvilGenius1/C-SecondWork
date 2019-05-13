@@ -4,11 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace TestGUI
 {
     class Piramida
     {
+        string pathPiramida = @"C:\Users\Иванов\Desktop\Программирование\piramida.dat";
+
         private int lengthPiramida;
         private double VPiramida, squarePiramida, h;
         private static float pi = 3.14f;
@@ -53,6 +56,7 @@ namespace TestGUI
             setPiramidaH();
 
             String resultPiramida = "Square piramida = " + getSquarePiramida() + ". V piramida = " + getVpiramida();
+            File.WriteAllText(pathPiramida, resultPiramida);
             return resultPiramida;
         }
     }
